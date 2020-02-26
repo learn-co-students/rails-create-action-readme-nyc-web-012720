@@ -10,6 +10,18 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
   end
+  
+  def create
+    # byebug
+    @post = Post.create(post_params)
+    redirect_to @post
+  end
 
-  # add create method here
+  private
+
+  def post_params
+    params.permit(:title, :description)
+  end
+
+
 end
