@@ -40,3 +40,280 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title Goes Here"], ["description", "Desc goes here..."], ["created_at", "2020-02-27 15:03:30.854634"], ["updated_at", "2020-02-27 15:03:30.854634"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2020-02-27 10:08:40 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (8.9ms)
+Completed 200 OK in 171ms (Views: 90.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for ::1 at 2020-02-27 10:08:43 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 1558ms (Views: 1551.2ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-02-27 10:08:56 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 130ms (Views: 94.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2020-02-27 10:09:11 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bQ8UHXHu6iCjHBS5Sw3ojR4bQDsLSHd5VLPw8G3LN4vEt/Q928a5LMTNd8+eljbXOrsYBe3RhWqQhXaWjEcmGQ==", "title"=>"Intro to Forms", "description"=>"Forms", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Intro to Forms"], ["description", "Forms"], ["created_at", "2020-02-27 15:09:11.669237"], ["updated_at", "2020-02-27 15:09:11.669237"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 49ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-02-27 10:10:06 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 195ms (Views: 182.1ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/posts" for ::1 at 2020-02-27 10:10:14 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EY2ZF69GrHOukJx0pdAg+lVFjMq0MYAwiiKsE4lm8Ny4NXk3BW7/f8lB/wJwS/6gceXU9FKociNOFCp1aOrhTg==", "title"=>"Test", "description"=>"", "commit"=>"Submit Post"}
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 44ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-02-27 10:11:54 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 137ms (Views: 122.1ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/posts" for ::1 at 2020-02-27 10:11:59 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ln35dI75OZHRWR917z8797OUrnUfqFIREfgXaiTc4hmHxRlUJNFqnbaIfAM6pOWtlzT2S/kxoALVzpEMxVDziw==", "title"=>"Test", "description"=>"", "commit"=>"Submit Post"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'utf8' for Post.):
+  
+app/controllers/posts_controller.rb:15:in `create'
+  Rendering /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.9ms)
+  Rendering /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (13.2ms)
+  Rendering /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (76.3ms)
+Started GET "/posts" for ::1 at 2020-02-27 10:14:04 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 133ms (Views: 128.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-02-27 10:14:07 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 60ms (Views: 21.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2020-02-27 10:14:13 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"39lOqd+WEZibYvLrhxz+v1EdVpmP/zAUbiAZyeg7m9J2Ya6Jdb5ClPyzkZ1ShyDldb0Op2lmwgeqFp+vCbeKQA==", "title"=>"Test", "description"=>"", "commit"=>"Submit Post"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Test"], ["description", ""], ["created_at", "2020-02-27 15:14:13.591009"], ["updated_at", "2020-02-27 15:14:13.591009"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 54ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-02-27 10:17:47 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 200ms (Views: 186.0ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/posts" for ::1 at 2020-02-27 10:17:50 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eR0ll1N2mb54aF/r729KxNkVJs5Wej2hFIbNcAMsykrQpcW3+V7Ksh+5PJ069JSe/bV+8LDjz7LQsEsW4qDb2A==", "title"=>"Test", "description"=>"", "commit"=>"Submit Post"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'first_name' for Post.):
+  
+app/controllers/posts_controller.rb:15:in `create'
+  Rendering /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.4ms)
+  Rendering /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.6ms)
+  Rendering /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (57.5ms)
+Started GET "/posts/new" for ::1 at 2020-02-27 10:18:34 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 226ms (Views: 207.9ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/posts" for ::1 at 2020-02-27 10:18:36 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KoGhPk6JjbvZ7qtrNS7CDpNY1jWXt2Na6D0BV04oFwaDOUEe5KHet74/yB3gtRxUt/iOC3EukUksC4cxr6QGlA==", "title"=>"Test", "description"=>"", "commit"=>"Submit Post"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Test"], ["description", ""], ["created_at", "2020-02-27 15:18:36.627036"], ["updated_at", "2020-02-27 15:18:36.627036"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 59ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-02-27 10:20:08 -0500
+  
+SyntaxError (/Volumes/Data/User/KomalD/Documents/GitHub/rails-create-action-readme-nyc-web-012720/app/controllers/posts_controller.rb:16: syntax error, unexpected ':', expecting end
+        title: params[:title],
+             ^
+/Volumes/Data/User/KomalD/Documents/GitHub/rails-create-action-readme-nyc-web-012720/app/controllers/posts_controller.rb:17: syntax error, unexpected tLABEL, expecting '='
+        description: params[:description]
+        ^~~~~~~~~~~~):
+  
+app/controllers/posts_controller.rb:16: syntax error, unexpected ':', expecting end
+app/controllers/posts_controller.rb:17: syntax error, unexpected tLABEL, expecting '='
+  Rendering /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.9ms)
+  Rendering /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.8ms)
+  Rendering /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.6ms)
+  Rendered /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (72.4ms)
+Started GET "/posts/new" for ::1 at 2020-02-27 10:29:06 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 215ms (Views: 205.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/posts" for ::1 at 2020-02-27 10:29:09 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xi0uMBKVSQfe4nMyNNiiYmn54Q+mzlhqCA8AfpW5nLD3lc4QuL0aC7kzEEThQ3w4TVm5MUBXqnnMOYYYdDWNIg==", "title"=>"Test", "description"=>"", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (24.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "[\"Test\", \"\"]"], ["description", ""], ["created_at", "2020-02-27 15:29:09.544762"], ["updated_at", "2020-02-27 15:29:09.544762"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 56ms (ActiveRecord: 26.8ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-02-27 10:29:15 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2020-02-27 10:29:18 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0USIegzxsggsLlIabn88HoAeHXKOF0EvF6T3D4MgOvZ4/GhaptnhBEv/MWy75OJEpL5FTGiOszzTknFpYqwrZA==", "title"=>"Test", "description"=>"test", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "[\"Test\", \"test\"]"], ["description", "test"], ["created_at", "2020-02-27 15:29:18.133278"], ["updated_at", "2020-02-27 15:29:18.133278"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 38ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/posts" for ::1 at 2020-02-27 10:30:46 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 99ms (Views: 92.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts" for ::1 at 2020-02-27 10:30:48 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-02-27 10:30:51 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 66ms (Views: 19.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2020-02-27 10:30:57 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xzqoqqQabq4vDsOD3Da4tJsSYoLeFwlo1rNlwQDrWmJugkiKDjI9okjfoPUJrWbuv7I6vDiO+3sSheOn4WdL8A==", "title"=>"Test", "description"=>"test", "commit"=>"Submit Post"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `title=' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:16:in `create'
+  Rendering /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Volumes/Data/User/KomalD/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.9ms)
+Started POST "/posts" for ::1 at 2020-02-27 10:31:11 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xzqoqqQabq4vDsOD3Da4tJsSYoLeFwlo1rNlwQDrWmJugkiKDjI9okjfoPUJrWbuv7I6vDiO+3sSheOn4WdL8A==", "title"=>"Test", "description"=>"test", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "[\"Test\", \"test\"]"], ["description", "test"], ["created_at", "2020-02-27 15:31:11.456073"], ["updated_at", "2020-02-27 15:31:11.456073"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/8
+Completed 302 Found in 14ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/posts/8" for ::1 at 2020-02-27 10:31:11 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 192ms (Views: 77.7ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/posts" for ::1 at 2020-02-27 10:33:40 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xzqoqqQabq4vDsOD3Da4tJsSYoLeFwlo1rNlwQDrWmJugkiKDjI9okjfoPUJrWbuv7I6vDiO+3sSheOn4WdL8A==", "title"=>"Test", "description"=>"Given a description", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "[\"Test\", \"Given a description\"]"], ["description", "Given a description"], ["created_at", "2020-02-27 15:33:40.735504"], ["updated_at", "2020-02-27 15:33:40.735504"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/9
+Completed 302 Found in 43ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/posts/9" for ::1 at 2020-02-27 10:33:41 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 552ms (Views: 523.5ms | ActiveRecord: 0.3ms)
+
+
